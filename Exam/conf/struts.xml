@@ -19,16 +19,39 @@
 			<result name="success">/test.jsp</result>
 		</action>
 
-
+		<!-- SubjectAction -->
+		<action name="subjectAction_*" class="subjectAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/subjectAction/list.jsp</result>
+			<result name="addUI">/WEB-INF/jsp/subjectAction/addUI.jsp</result>
+			<result name="editUI">/WEB-INF/jsp/subjectAction/editUI.jsp</result>
+			<result name="toList" type="redirectAction">subjectAction_list</result>
+		</action>
 		
-		<!-- 用户管理 
+		
+		<!-- QueTypeAction -->
+		<action name="queTypeAction_*" class="queTypeAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/queTypeAction/list.jsp</result>
+			<result name="addUI">/WEB-INF/jsp/queTypeAction/addUI.jsp</result>
+			<result name="editUI">/WEB-INF/jsp/queTypeAction/editUI.jsp</result>
+			<result name="toList" type="redirectAction">queTypeAction_list</result>
+		</action>
+		
+		<!-- userAction -->
 		<action name="userAction_*" class="userAction" method="{1}">
 			<result name="list">/WEB-INF/jsp/userAction/list.jsp</result>
 			<result name="addUI">/WEB-INF/jsp/userAction/addUI.jsp</result>
 			<result name="editUI">/WEB-INF/jsp/userAction/editUI.jsp</result>
-			<result name="toList" type="redirectAction">userAction_list?parentId=${parentId}</result>
+			<result name="toList" type="redirectAction">userAction_list</result>
 		</action>
-		-->
+		
+		
+		<!-- questionAction -->
+		<action name="questionAction_*" class="questionAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/questionAction/list.jsp</result>
+			<result name="addUI">/WEB-INF/jsp/questionAction/addUI.jsp</result>
+			<result name="editUI">/WEB-INF/jsp/questionAction/editUI.jsp</result>
+			<result name="toList" type="redirectAction">questionAction_list</result>
+		</action>
     </package>
 
 </struts>

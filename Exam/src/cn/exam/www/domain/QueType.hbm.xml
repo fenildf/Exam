@@ -12,7 +12,7 @@
 		<property name="name"/>
 		
 		<!-- questions属性 ，本类与Question类的一对多关系 -->
-		<set name="questions">
+		<set name="questions" cascade="delete">
 			<key column="queTypeId"></key>
 			<one-to-many class="Question"></one-to-many>
 		</set>

@@ -2,6 +2,14 @@ package cn.exam.www.base;
 
 import java.lang.reflect.ParameterizedType;
 
+import javax.annotation.Resource;
+
+import cn.exam.www.service.PaperService;
+import cn.exam.www.service.QueTypeService;
+import cn.exam.www.service.QuestionService;
+import cn.exam.www.service.SubjectService;
+import cn.exam.www.service.UserService;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -12,7 +20,22 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T>{
 	 */
 	private static final long serialVersionUID = 4648148836347669657L;
 	
-
+	@Resource
+	protected PaperService paperService;
+	
+	@Resource
+	protected QuestionService questionService;
+	
+	@Resource
+	protected QueTypeService queTypeService;
+	
+	@Resource
+	protected SubjectService subjectService;
+	
+	@Resource
+	protected UserService userService;
+	
+	
 	
 	
 	

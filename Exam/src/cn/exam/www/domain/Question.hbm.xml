@@ -19,6 +19,7 @@
 		<property name="score"/>
 		<property name="level"/>
 		<property name="picture"/>
+		<property name="date" />
 		
 		<!-- subject属性  ，本类与Subject类的多对一关系 -->
 		<many-to-one name="subject" class="Subject" column="subjectId"></many-to-one>

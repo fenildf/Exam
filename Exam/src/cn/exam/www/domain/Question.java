@@ -22,6 +22,7 @@ public class Question {
 	private Integer score;
 	private String level;
 	private String picture;
+	private String date;
 	
 	
 	
@@ -109,6 +110,12 @@ public class Question {
 	}
 	public void setPapers(Set<Paper> papers) {
 		this.papers = papers;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
 	}
 	
 	

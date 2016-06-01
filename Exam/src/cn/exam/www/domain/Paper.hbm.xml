@@ -11,10 +11,10 @@
 		</id>
 		<property name="title"/>
 		<property name="description"/>
-		<property name="date"/>
+		<property name="date" type="timestamp"/>
 		
 		<!-- questions属性，本类与Question类的多对多关系 -->
-		<set name="questions" table="exam_question_paper">
+		<set name="questions" table="exam_question_paper" >
 			<key column="paperId"></key>
 			<many-to-many column="questionId" class="Question"></many-to-many>
 		</set>
