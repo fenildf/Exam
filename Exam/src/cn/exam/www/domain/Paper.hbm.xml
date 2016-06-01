@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.exam.www.domain">
+
+	<class name="Paper" table="exam_paper">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="title"/>
+		<property name="description"/>
+		<property name="date"/>
+		
+		<!-- questions属性，本类与Question类的多对多关系 -->
+		<set name="questions" table="exam_question_paper">
+			<key column="paperId"></key>
+			<many-to-many column="questionId" class="Question"></many-to-many>
+		</set>
+		
+		<!-- users 属性，本类与User类的多对多关系 -->
+		<set name="users" table="exam_user_paper">
+			<key column="paperId"></key>
+			<many-to-many column="userId" class="User"></many-to-many>
+		</set>
+	</class>
+	
+</hibernate-mapping>

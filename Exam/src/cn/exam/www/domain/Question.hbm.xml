@@ -1,0 +1,36 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.exam.www.domain">
+
+	<class name="Question" table="exam_question">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="content"/>
+		<property name="answer"/>
+		<property name="optionA"/>
+		<property name="optionB"/>
+		<property name="optionC"/>
+		<property name="optionD"/>
+		<property name="optionE"/>
+		<property name="score"/>
+		<property name="level"/>
+		<property name="picture"/>
+		
+		<!-- subject属性  ，本类与Subject类的多对一关系 -->
+		<many-to-one name="subject" class="Subject" column="subjectId"></many-to-one>
+		
+		<!-- queType属性 ，本类与QueType类的多对一关系 -->
+		<many-to-one name="queType" class="QueType" column="queTypeId"></many-to-one>
+		
+		<!-- papers属性, 本类与Paper类的多对多关系 -->
+		<set name="papers" table="exam_question_paper">
+			<key column="questionId"></key>
+			<many-to-many class="Paper" column="paperId"></many-to-many>
+		</set>
+	</class>
+	
+</hibernate-mapping>

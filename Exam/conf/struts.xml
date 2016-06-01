@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<!-- 配置为开发模式 -->
+    <constant name="struts.devMode" value="true" />
+	<!-- 配置扩展名为action -->
+    <constant name="struts.action.extension" value="action" />
+	<!-- 设置项目主题 -->
+   	<constant name="struts.ui.theme" value="simple"/>
+
+
+    <package name="default" namespace="/" extends="struts-default">
+		
+		<!-- 测试用的action，当与Spring整合后，class属性写的就是Spring中bean的名称 -->
+		<action name="test" class="testAction">
+			<result name="success">/test.jsp</result>
+		</action>
+
+
+		
+		<!-- 用户管理 
+		<action name="userAction_*" class="userAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/userAction/list.jsp</result>
+			<result name="addUI">/WEB-INF/jsp/userAction/addUI.jsp</result>
+			<result name="editUI">/WEB-INF/jsp/userAction/editUI.jsp</result>
+			<result name="toList" type="redirectAction">userAction_list?parentId=${parentId}</result>
+		</action>
+		-->
+    </package>
+
+</struts>
